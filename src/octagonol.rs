@@ -15,15 +15,15 @@ pub enum DirectionOct {
  */
 pub fn int_to_dir(val: i32) -> DirectionOct{
     return match val {
-        0 => Direction::North,
-        1 => Direction::NorthEast,
-        2 => Direction::East,
-        3 => Direction::SouthEast,
-        4 => Direction::South,
-        5 => Direction::SouthWest,
-        6 => Direction::West,
-        7 => Direction::NorthWest,
-        _ => Direction::North, //impossible case
+        0 => DirectionOct::North,
+        1 => DirectionOct::NorthEast,
+        2 => DirectionOct::East,
+        3 => DirectionOct::SouthEast,
+        4 => DirectionOct::South,
+        5 => DirectionOct::SouthWest,
+        6 => DirectionOct::West,
+        7 => DirectionOct::NorthWest,
+        _ => DirectionOct::North, //impossible case
     }
 }
 
@@ -32,45 +32,45 @@ pub fn int_to_dir(val: i32) -> DirectionOct{
  */
 pub fn dir_to_point(val: DirectionOct) -> [f64; 2]{
     return match val {
-        Direction::North => [0.0, -1.0],
-        Direction::NorthEast => [1.0, -1.0],
-        Direction::East => [1.0, 0.0],
-        Direction::SouthEast => [1.0, 1.0],
-        Direction::South => [0.0, 1.0],
-        Direction::SouthWest => [-1.0, 1.0],
-        Direction::West => [-1.0, 0.0],
-        Direction::NorthWest => [-1.0, -1.0],
+        DirectionOct::North => [0.0, -1.0],
+        DirectionOct::NorthEast => [1.0, -1.0],
+        DirectionOct::East => [1.0, 0.0],
+        DirectionOct::SouthEast => [1.0, 1.0],
+        DirectionOct::South => [0.0, 1.0],
+        DirectionOct::SouthWest => [-1.0, 1.0],
+        DirectionOct::West => [-1.0, 0.0],
+        DirectionOct::NorthWest => [-1.0, -1.0],
     }
 }
 
 /**
  * Takes a direction and returns the next clockwise direction from it.
  */
-pub fn clockwise(val: Direction) -> Direction{
+pub fn clockwise(val: DirectionOct) -> DirectionOct{
     return match val {
-        Direction::North => Direction::NorthEast,
-        Direction::NorthEast => Direction::East,
-        Direction::East => Direction::SouthEast,
-        Direction::SouthEast => Direction::South,
-        Direction::South => Direction::SouthWest,
-        Direction::SouthWest => Direction::West,
-        Direction::West => Direction::NorthWest,
-        Direction::NorthWest => Direction::North,
+        DirectionOct::North => DirectionOct::NorthEast,
+        DirectionOct::NorthEast => DirectionOct::East,
+        DirectionOct::East => DirectionOct::SouthEast,
+        DirectionOct::SouthEast => DirectionOct::South,
+        DirectionOct::South => DirectionOct::SouthWest,
+        DirectionOct::SouthWest => DirectionOct::West,
+        DirectionOct::West => DirectionOct::NorthWest,
+        DirectionOct::NorthWest => DirectionOct::North,
     }
 }
 
 /**
  * Takes a direction and returns the next anti-clockwise direction from it.
  */
-pub fn anti_clockwise(val: Direction) -> Direction{
+pub fn anti_clockwise(val: DirectionOct) -> DirectionOct{
     return match val {
-        Direction::North => Direction::NorthWest,
-        Direction::NorthEast => Direction::North,
-        Direction::East => Direction::NorthEast,
-        Direction::SouthEast => Direction::East,
-        Direction::South => Direction::SouthEast,
-        Direction::SouthWest => Direction::South,
-        Direction::West => Direction::SouthWest,
-        Direction::NorthWest => Direction::West,
+        DirectionOct::North => Direction::DirectionOct,
+        DirectionOct::NorthEast => DirectionOct::North,
+        DirectionOct::East => DirectionOct::NorthEast,
+        DirectionOct::SouthEast => DirectionOct::East,
+        DirectionOct::South => DirectionOct::SouthEast,
+        DirectionOct::SouthWest => DirectionOct::South,
+        DirectionOct::West => DirectionOct::SouthWest,
+        DirectionOct::NorthWest => DirectionOct::West,
     }
 }
