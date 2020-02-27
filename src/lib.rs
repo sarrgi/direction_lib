@@ -1,6 +1,7 @@
 #[cfg(test)]
 mod tests {
     use crate::{Direction, clockwise, anti_clockwise, inverse};
+    use crate::octagonol::{DirectionOct, oct_clockwise};
 
     #[test]
     fn clockwise_tests(){
@@ -24,6 +25,14 @@ mod tests {
         assert_eq!(inverse(Direction::Down), Direction::Up);
         assert_eq!(inverse(Direction::Left), Direction::Right);
         assert_eq!(inverse(Direction::Right), Direction::Left);
+    }
+
+    //OCTAGONAL TESTS
+    #[test]
+    fn a(){
+        let x = DirectionOct::North;
+        assert_eq!(oct_clockwise(x), DirectionOct::NorthEast);
+
     }
 
 }

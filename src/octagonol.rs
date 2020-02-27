@@ -46,7 +46,7 @@ pub fn dir_to_point(val: DirectionOct) -> [f64; 2]{
 /**
  * Takes a direction and returns the next clockwise direction from it.
  */
-pub fn clockwise(val: DirectionOct) -> DirectionOct{
+pub fn oct_clockwise(val: DirectionOct) -> DirectionOct{
     return match val {
         DirectionOct::North => DirectionOct::NorthEast,
         DirectionOct::NorthEast => DirectionOct::East,
@@ -64,7 +64,7 @@ pub fn clockwise(val: DirectionOct) -> DirectionOct{
  */
 pub fn anti_clockwise(val: DirectionOct) -> DirectionOct{
     return match val {
-        DirectionOct::North => Direction::DirectionOct,
+        DirectionOct::North => DirectionOct::NorthWest,
         DirectionOct::NorthEast => DirectionOct::North,
         DirectionOct::East => DirectionOct::NorthEast,
         DirectionOct::SouthEast => DirectionOct::East,
