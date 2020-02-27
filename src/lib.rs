@@ -28,6 +28,8 @@ mod tests {
 
 }
 
+mod octagonol;
+
 /**
  * 4 Way Direction enum. Look into expanding for use across multiple projects/making a crate.
  */
