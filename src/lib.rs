@@ -224,3 +224,16 @@ pub fn oct_anti_clockwise(val: DirectionOct) -> DirectionOct{
         DirectionOct::NorthWest => DirectionOct::West,
     }
 }
+
+pub fn oct_is_diagonal(val: DirectionOct) -> bool {
+    return match val{
+        DirectionOct::North => false,
+        DirectionOct::NorthEast => true,
+        DirectionOct::East => false,
+        DirectionOct::SouthEast => true,
+        DirectionOct::South => false,
+        DirectionOct::SouthWest => true,
+        DirectionOct::West => false,
+        DirectionOct::NorthWest => true,
+    }
+}
